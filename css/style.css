@@ -1,0 +1,30 @@
+/* Mengimpor font dari Google Fonts agar tampilan lebih modern */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+/* === PENGATURAN DASAR (RESET) === */
+/* Tanda bintang (*) artinya "pilih semua elemen" */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Kalkulasi ukuran box jadi lebih mudah */
+}
+
+/* === GAYA UTAMA UNTUK BODY === */
+body {
+    font-family: 'Inter', sans-serif; /* Jenis font utama */
+    line-height: 1.6; /* Jarak antar baris teks */
+    background-color: #f4f4f4; /* Warna latar belakang halaman */
+    color: #333; /* Warna teks utama */
+}
+
+/* === CLASS BANTUAN UNTUK LAYOUT === */
+.container {
+    max-width: 1200px; /* Lebar maksimum konten */
+    margin: 0 auto; /* Membuat konten berada di tengah halaman */
+    padding: 0 20px; /* Memberi sedikit jarak di sisi kiri dan kanan */
+}
+
+/* (Styling yang lebih spesifik untuk header, hero, kartu, dll.
+    akan ditambahkan di sini nanti) 
+*/
+
