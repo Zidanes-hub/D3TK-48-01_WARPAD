@@ -1,30 +1,414 @@
-/* Mengimpor font dari Google Fonts agar tampilan lebih modern */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+/* ==============================================
+  1. CSS VARIABLES (WADAH BUMBU KITA)
+==============================================
+*/
+:root {
+    --bg-primary: #FFFBF5; /* Krem Hangat */
+    --text-primary: #4E342E; /* Coklat Tua */
+    --accent-primary: #BF360C; /* Merah Cabai */
+    --accent-secondary: #FFC107; /* Kuning Kunyit */
+}
 
-/* === PENGATURAN DASAR (RESET) === */
-/* Tanda bintang (*) artinya "pilih semua elemen" */
+
+/* ==============================================
+  2. GAYA DASAR (RESEP DASAR)
+==============================================
+*/
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Kalkulasi ukuran box jadi lebih mudah */
+    box-sizing: border-box;
 }
 
-/* === GAYA UTAMA UNTUK BODY === */
 body {
-    font-family: 'Inter', sans-serif; /* Jenis font utama */
-    line-height: 1.6; /* Jarak antar baris teks */
-    background-color: #f4f4f4; /* Warna latar belakang halaman */
-    color: #333; /* Warna teks utama */
+    font-family: sans-serif;
+    background-color: var(--bg-primary); 
+    color: var(--text-primary); 
 }
 
-/* === CLASS BANTUAN UNTUK LAYOUT === */
-.container {
-    max-width: 1200px; /* Lebar maksimum konten */
-    margin: 0 auto; /* Membuat konten berada di tengah halaman */
-    padding: 0 20px; /* Memberi sedikit jarak di sisi kiri dan kanan */
-}
 
-/* (Styling yang lebih spesifik untuk header, hero, kartu, dll.
-    akan ditambahkan di sini nanti) 
+/* ==============================================
+  3. STYLING HEADER
+==============================================
 */
+header {
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+
+/* ==============================================
+  4. UTILITIES (KELAS PEMBANTU SERBAGUNA)
+==============================================
+*/
+.container {
+    max-width: 1200px; /* Lebar maksimum konten agar tidak terlalu lebar di layar besar */
+    margin: 0 auto; /* Trik agar container selalu di tengah halaman */
+    padding: 20px; /* Jarak dari konten ke tepi kiri dan kanan container */
+}
+
+
+/* ==============================================
+  5. STYLING HEADER DENGAN FLEXBOX
+==============================================
+*/
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+
+/* ==============================================
+  6. STYLING HERO SECTION
+==============================================
+*/
+#hero {
+    /* Trik membuat lapisan gelap di atas gambar agar teks lebih mudah dibaca */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('../images/hero-background.jpg'); /* Ganti dengan gambar aslimu nanti */
+    
+    background-size: cover; /* Agar gambar latar menutupi seluruh area */
+    background-position: center; /* Posisikan gambar di tengah */
+    min-height: 500px; /* Tinggi minimum section, bisa disesuaikan */
+    color: white; /* Warna teks jadi putih */
+    
+    /* Trik Flexbox untuk menengahkan konten secara vertikal & horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 48px; /* Ukuran judul utama */
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 20px; /* Ukuran sub-judul */
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: var(--accent-secondary); /* Warna Kuning Kunyit */
+    color: var(--text-primary); /* Warna teks Coklat Tua */
+    padding: 15px 30px; /* Ukuran padding tombol (atas-bawah, kiri-kanan) */
+    text-decoration: none; /* Hapus garis bawah */
+    font-weight: bold;
+    border-radius: 5px; /* Buat sudutnya sedikit melengkung */
+    transition: background-color 0.3s ease; /* Efek transisi halus saat disentuh mouse */
+}
+
+.cta-button:hover {
+    background-color: #ffca2c; /* Warna kuning jadi sedikit lebih terang saat disentuh mouse */
+}
+
+
+/* ==============================================
+  7. STYLING BAGIAN MENU PAKET
+==============================================
+*/
+#paket {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.card-container {
+    display: flex; /* Aktifkan Flexbox lagi! */
+    justify-content: center; /* Posisikan kartu-kartu di tengah */
+    gap: 30px; /* Jarak otomatis antar kartu */
+    align-items: center; /* Membuat kartu sejajar walau ukurannya beda */
+}
+
+.package-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Efek bayangan halus */
+    overflow: hidden; /* Biar gambar tidak keluar dari sudut melengkung */
+    text-align: center;
+    max-width: 350px; /* Lebar maksimum tiap kartu */
+    transition: transform 0.3s ease; /* Efek animasi saat disentuh mouse */
+    position: relative; /* WAJIB agar bisa menampung label badge */
+}
+
+.package-card:hover {
+    transform: translateY(-10px); /* Kartu akan sedikit terangkat saat disentuh mouse */
+}
+
+.package-card img {
+    width: 100%;
+    height: auto;
+}
+
+.package-card h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.package-card p {
+    padding: 0 20px;
+    font-size: 16px;
+}
+
+.package-card .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--accent-primary);
+    margin: 20px 0;
+}
+
+
+/* ==============================================
+  8. STYLING KARTU REKOMENDASI
+==============================================
+*/
+.package-card.recommended {
+    transform: scale(1.05); /* Buat sedikit lebih besar */
+    border: 3px solid var(--accent-secondary); /* Kasih border Kuning Kunyit */
+}
+
+.package-card.recommended:hover {
+    transform: scale(1.05) translateY(-10px); /* Efek hover tetap jalan */
+}
+
+.badge {
+    position: absolute; /* Posisikan label secara 'melayang' */
+    top: 10px; /* Jarak 10px dari atas */
+    right: -20px; /* Tarik -20px ke kanan */
+    background-color: var(--accent-primary); /* Warna Merah Cabai */
+    color: white;
+    padding: 5px 25px; /* Disesuaikan agar pas */
+    font-weight: bold;
+    transform: rotate(45deg); /* Putar 45 derajat */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 14px; /* Ukuran font dikecilkan sedikit */
+}
+
+
+/* ==============================================
+  9. STYLING FOOTER
+==============================================
+*/
+footer {
+    background-color: var(--text-primary); /* Warna Coklat Tua */
+    color: #a0a0a0; /* Warna teks abu-abu terang */
+    padding: 20px 0; /* Jarak atas-bawah */
+    text-align: center;
+    margin-top: 60px; /* Jarak dari section terakhir */
+}
+
+
+/* ==============================================
+  10. STYLING GALERI LAUK
+==============================================
+*/
+#lauk {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.lauk-grid {
+    display: grid;
+    /* Membuat kolom responsif: 4 di layar besar, menyesuaikan di layar kecil */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Jarak antar gambar */
+}
+
+.lauk-item {
+    position: relative; /* Wajib agar bisa menampung overlay */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.lauk-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar memenuhi kotak tanpa distorsi */
+    display: block; /* Menghilangkan spasi aneh di bawah gambar */
+    transition: transform 0.3s ease;
+}
+
+.lauk-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    
+    /* Posisikan teks di bawah */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    
+    opacity: 0; /* Sembunyikan secara default */
+    transition: opacity 0.3s ease;
+}
+
+.lauk-item:hover .lauk-overlay {
+    opacity: 1; /* Munculkan saat disentuh mouse */
+}
+
+.lauk-item:hover img {
+    transform: scale(1.1); /* Efek zoom-in pada gambar saat disentuh mouse */
+}
+
+.lauk-info {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.lauk-price {
+    font-size: 16px;
+    color: var(--accent-secondary);
+}
+
+
+/* ==============================================
+  11. STYLING SECTION MINUMAN
+==============================================
+*/
+#minuman {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #EFEBE9; /* Warna latar sedikit beda biar ada variasi */
+}
+
+
+/* ==============================================
+  12. STYLING SECTION OWNER
+==============================================
+*/
+#owner {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.owner-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.owner-profile {
+    max-width: 400px;
+    text-align: center;
+}
+
+.owner-profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Membuat gambar menjadi bulat sempurna */
+    object-fit: cover; /* Agar foto tidak gepeng */
+    margin-bottom: 20px;
+    border: 5px solid var(--accent-secondary); /* Border Kuning Kunyit */
+}
+
+.owner-profile h4 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+
+/* ==============================================
+  13. STYLING SECTION TESTIMONI (BARU!)
+==============================================
+*/
+#testimoni {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #EFEBE9; /* Warna sama dengan minuman */
+}
+
+.testimoni-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.testimoni-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 350px;
+}
+
+.testimoni-card .stars {
+    font-size: 24px;
+    color: var(--accent-secondary); /* Warna Kuning Kunyit */
+    margin-bottom: 15px;
+}
+
+.testimoni-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimoni-card h4 {
+    font-weight: bold;
+    text-align: right;
+}
+
+
+/* ==============================================
+  14. STYLING SECTION LOKASI (BARU!)
+==============================================
+*/
+#lokasi {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.lokasi-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.lokasi-info {
+    flex: 1; /* Ambil 1 bagian ruang */
+}
+
+.lokasi-info h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.lokasi-info p {
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.lokasi-map {
+    flex: 1; /* Ambil 1 bagian ruang */
+}
+
+.lokasi-map iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+}
 

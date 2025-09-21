@@ -2,31 +2,28 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <!-- WAJIB ADA: Biar tampilan web menyesuaikan di HP (responsif) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warpad Online - Rasa Otentik, Pesan Praktis</title>
-    
-    <!-- Menghubungkan file HTML ini dengan file CSS kita -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Bagian 1: Header & Navigasi -->
+    <!-- Header -->
     <header>
         <div class="container">
-            <!-- Teks LOGO WARPAD bisa diganti dengan file gambar logo nanti -->
             <div class="logo">WARPAD</div>
             <nav>
                 <a href="#paket">Menu Paket</a>
                 <a href="#lauk">Pilih Lauk</a>
+                <a href="#minuman">Minuman</a>
                 <a href="#owner">Tentang Kami</a>
-                <a href="#owner">Tentang KAMU</a>
+                <a href="#lokasi">Lokasi</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Bagian 2: Hero Section - Tampilan Utama yang menarik perhatian -->
+        <!-- Hero Section -->
         <section id="hero">
             <div class="container">
                 <h1>Laper? Pesan Nasi Padang Favoritmu Sekarang!</h1>
@@ -35,44 +32,206 @@
             </div>
         </section>
 
-        <!-- Bagian 3: Menu Paket Unggulan -->
+        <!-- Menu Paket Section -->
         <section id="paket">
             <div class="container">
-                <h2>Paket Hemat, Rasa Hebat!</h2>
+                <h2 class="section-title">Paket Hemat, Rasa Hebat!</h2>
                 <div class="card-container">
-                    <!-- NANTI DIISI RIZKI: Kartu untuk Paket Rakyat (Rp 10rb) -->
-                    <!-- NANTI DIISI RIZKI: Kartu untuk Paket Nelayan (Rp 15rb) -->
-                    <!-- NANTI DIISI RIZKI: Kartu untuk Paket Juara (Rp 17rb) -->
+                    <!-- Kartu Paket 1 (REKOMENDASI) -->
+                    <div class="package-card recommended">
+                        <div class="badge">Terlaris!</div>
+                        <img src="https://placehold.co/400x300/EFEBE9/4E342E?text=Paket+Rakyat" alt="Paket Nasi Telor">
+                        <h3>Paket Rakyat</h3>
+                        <p>Nasi + Telor Balado + Sayur Nangka + Sambal Ijo</p>
+                        <div class="price">Rp 10.000</div>
+                    </div>
+                    <!-- Kartu Paket 2 -->
+                    <div class="package-card">
+                        <img src="https://placehold.co/400x300/EFEBE9/4E342E?text=Paket+Nelayan" alt="Paket Nasi Ikan">
+                        <h3>Paket Nelayan</h3>
+                        <p>Nasi + Ikan Goreng + Sayur Nangka + Sambal Ijo</p>
+                        <div class="price">Rp 15.000</div>
+                    </div>
+                    <!-- Kartu Paket 3 -->
+                    <div class="package-card">
+                        <img src="https://placehold.co/400x300/EFEBE9/4E342E?text=Paket+Juara" alt="Paket Nasi Ayam">
+                        <h3>Paket Juara</h3>
+                        <p>Nasi + Ayam Bakar + Sayur Nangka + Sambal Ijo</p>
+                        <div class="price">Rp 17.000</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Bagian 4: Galeri Lauk -->
+        <!-- Galeri Lauk Section -->
         <section id="lauk">
             <div class="container">
-                <h2>Pilih Sendiri Lauk Jagoanmu</h2>
-                <div class="grid-container">
-                    <!-- NANTI DIISI RIZKI: Foto-foto lauk dengan nama & harganya -->
+                <h2 class="section-title">Pilih Sendiri Lauk Jagoanmu</h2>
+                <div class="lauk-grid">
+                    <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Rendang" alt="Rendang Daging">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Rendang Daging</div>
+                            <div class="lauk-price">Rp 15.000</div>
+                        </div>
+                    </div>
+                    <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Ayam+Pop" alt="Ayam Pop">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Ayam Pop</div>
+                            <div class="lauk-price">Rp 12.000</div>
+                        </div>
+                    </div>
+                    <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Kikil" alt="Gulai Kikil">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Gulai Kikil</div>
+                            <div class="lauk-price">Rp 14.000</div>
+                        </div>
+                    </div>
+                    <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Dendeng" alt="Dendeng Balado">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Dendeng Balado</div>
+                            <div class="lauk-price">Rp 16.000</div>
+                        </div>
+                    </div>
+                    <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Perkedel" alt="Perkedel Kentang">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Perkedel Kentang</div>
+                            <div class="lauk-price">Rp 3.000</div>
+                        </div>
+                    </div>
+                    <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Telur+Dadar" alt="Telur Dadar Padang">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Telur Dadar</div>
+                            <div class="lauk-price">Rp 5.000</div>
+                        </div>
+                    </div>
+                     <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Gulai+Otak" alt="Gulai Otak">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Gulai Otak</div>
+                            <div class="lauk-price">Rp 13.000</div>
+                        </div>
+                    </div>
+                     <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Ayam+Gulai" alt="Ayam Gulai">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Ayam Gulai</div>
+                            <div class="lauk-price">Rp 12.000</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Bagian 5: Kenalan Sama Owner -->
+
+        <!-- Minuman Section -->
+        <section id="minuman">
+             <div class="container">
+                <h2 class="section-title">Pelepas Dahaga</h2>
+                <div class="lauk-grid">
+                    <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Es+Teh" alt="Es Teh Manis">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Es Teh Manis</div>
+                            <div class="lauk-price">Rp 5.000</div>
+                        </div>
+                    </div>
+                    <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Sop+Buah" alt="Sop Buah Segar">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Sop Buah</div>
+                            <div class="lauk-price">Rp 12.000</div>
+                        </div>
+                    </div>
+                    <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Es+Mangga" alt="Jus Mangga">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Jus Mangga</div>
+                            <div class="lauk-price">Rp 10.000</div>
+                        </div>
+                    </div>
+                    <div class="lauk-item">
+                        <img src="https://placehold.co/300x300/EFEBE9/4E342E?text=Air+Mineral" alt="Air Mineral">
+                        <div class="lauk-overlay">
+                            <div class="lauk-info">Air Mineral</div>
+                            <div class="lauk-price">Rp 4.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN TENTANG OWNER -->
         <section id="owner">
             <div class="container">
-                <h2>Dari Dapur Kami</h2>
+                <h2 class="section-title">Dari Dapur Kami</h2>
                 <div class="owner-container">
-                    <!-- NANTI DIISI RIZKI: Info & foto Zidane -->
-                    <!-- NANTI DIISI RIZKI: Info & foto Rizki -->
+                    <div class="owner-profile">
+                        <img src="https://placehold.co/200x200/EFEBE9/4E342E?text=Zidane" alt="Foto Zidane Surya Nugraha">
+                        <h4>Zidane Surya Nugraha</h4>
+                        <p>"Rendang adalah passion saya. Setiap bumbu saya racik dengan hati untuk menghadirkan rasa otentik Minang di setiap suapan."</p>
+                    </div>
+                    <div class="owner-profile">
+                        <img src="https://placehold.co/200x200/EFEBE9/4E342E?text=Rizki" alt="Foto Muhammad Rizki Ramdhani">
+                        <h4>Muhammad Rizki Ramdhani</h4>
+                        <p>"Saya percaya, makanan enak harus disajikan dengan indah. Tugas saya adalah membuat pengalaman online Anda senikmat hidangan kami."</p>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- BAGIAN TESTIMONI -->
+        <section id="testimoni">
+            <div class="container">
+                <h2 class="section-title">Kata Pelanggan Setia Kami</h2>
+                <div class="testimoni-container">
+                    <div class="testimoni-card">
+                        <div class="stars">★★★★☆</div>
+                        <p>"Rendangnya juara! Bumbunya medok dan dagingnya empuk banget. Pasti pesen lagi!"</p>
+                        <h4>- Budi, Karyawan Swasta</h4>
+                    </div>
+                    <div class="testimoni-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Paket Rakyat-nya penyelamat tanggal tua. Murah, enak, kenyang. The best!"</p>
+                        <h4>- Ani, Mahasiswi</h4>
+                    </div>
+                    <div class="testimoni-card">
+                        <div class="stars">★★★★☆</div>
+                        <p>"Ayam pop-nya lembut, sambelnya mantap. Pelayanannya juga cepet. Recommended!"</p>
+                        <h4>- Candra, Driver Ojol</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN LOKASI -->
+        <section id="lokasi">
+            <div class="container">
+                <h2 class="section-title">Kunjungi Kami Langsung!</h2>
+                <div class="lokasi-container">
+                    <div class="lokasi-info">
+                        <h3>Warpad Online</h3>
+                        <p>Jl. Telekomunikasi No. 1, Terusan Buahbatu, Sukapura, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257</p>
+                        <p><strong>Jam Buka:</strong> Setiap Hari, 09:00 - 21:00 WIB</p>
+                        <p><strong>Telepon:</strong> 0812-3456-7890</p>
+                    </div>
+                    <div class="lokasi-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.307522031187!2d107.62949677484509!3d-6.973007468285519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9adf177bf8d%3A0x437398556f9fa03!2sTelkom%20University!5e0!3m2!1sen!2sid!4v1726900803531!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Bagian 6: Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Warpad Online. Dibuat dengan ❤️ oleh Zidane & Rizki.</p>
+             <p>&copy; 2025 Warpad Online. All Rights Reserved.</p>
         </div>
     </footer>
 
